@@ -418,9 +418,9 @@ m_strMsg()
 {
 }
 
-CUDTException::~CUDTException()
-{
-}
+//CUDTException::~CUDTException()
+//{
+//}
 
 const char* CUDTException::getErrorMessage()
 {

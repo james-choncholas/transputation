@@ -203,7 +203,11 @@ class UDT_API CUDTException
 public:
    CUDTException(int major = 0, int minor = 0, int err = -1);
    CUDTException(const CUDTException& e);
-   virtual ~CUDTException();
+   virtual ~CUDTException() = default;
+
+   CUDTException(CUDTException&&) = default;
+   CUDTException& operator=(const CUDTException&) = default;
+   CUDTException& operator=(CUDTException&&) = default;
 
       // Functionality:
       //    Get the description of the exception.

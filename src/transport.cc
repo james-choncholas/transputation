@@ -8,7 +8,7 @@ uint32_t Transport::Send(uint32_t len, uint8_t *data) {
   uint32_t n;
   Packet *p = new Packet(len, data);
   n = this->Send(p);
-  free(p);
+  delete p;
   return n;
 }
 

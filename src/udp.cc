@@ -52,7 +52,6 @@ void UDP::SetupServer(const char *host, uint16_t port) {
 void UDP::Accept() {
   char *data = (char *)malloc(6);
   char *handshake = (char *)"hello";
-  data[6] = 0;
 
   do {
     this->RecvRaw(6, (uint8_t *)data);
