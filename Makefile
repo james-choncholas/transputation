@@ -6,7 +6,7 @@ CXXFLAGS := -Wall -Wextra -O3 -Werror -std=c++11 -pedantic -pthread -fPIC -Wno-s
 LDFLAGS := -lpthread -lm -fPIC -L.
 
 # Source dir
-SRCDIR = src
+SRCDIR = transputation
 
 # Install prefix
 PREFIX := /usr/local
