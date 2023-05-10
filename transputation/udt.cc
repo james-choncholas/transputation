@@ -15,9 +15,10 @@ UDT::UDT() : clientfd(-1), local(NULL), remote(NULL) {
 
   int one = 1;
   int bufsize = 1024 * 1024 * 10;
+  int mss = 65000;
   ::UDT::setsockopt(fd, 0, UDT_REUSEADDR, (void *)&one, sizeof(one));
   ::UDT::setsockopt(fd, 0, UDT_LINGER, (void *)&one, sizeof(one));
-  ::UDT::setsockopt(fd, 0, UDT_MSS, new int(65000), sizeof(int));
+  ::UDT::setsockopt(fd, 0, UDT_MSS, &mss, sizeof(int));
   ::UDT::setsockopt(fd, 0, UDP_RCVBUF, (void *)&bufsize, sizeof(bufsize));
 //  ::UDT::setsockopt(fd, 0, UDT_RCVBUF, (void *)&bufsize, sizeof(bufsize));
 
