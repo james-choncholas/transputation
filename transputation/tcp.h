@@ -16,8 +16,9 @@ class TCP;
 #include "transport.h"
 
 namespace transputation {
-class TCP : public transputation::Transport {
- public:
+class TCP : public transputation::Transport
+{
+public:
   TCP();
   ~TCP();
   void SetupClient(const char *host, uint16_t port);
@@ -28,11 +29,11 @@ class TCP : public transputation::Transport {
   uint32_t RecvRaw(uint32_t len, uint8_t *data);
   uint32_t SendRaw(uint32_t len, uint8_t *data);
 
- private:
-  int fd;
-  int clientfd;
+private:
+  int fd = -1;
+  int clientfd = -1;
   struct sockaddr_in *local;
   struct sockaddr_in *remote;
 };
 
-}  // namespace transputation
+}// namespace transputation
