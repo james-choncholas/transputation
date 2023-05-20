@@ -58,10 +58,7 @@ void TCP::Accept()
 
 void TCP::Connect()
 {
-  if (connect(fd, (struct sockaddr *)remote, sizeof(*remote)) < 0) {
-    perror("Connection failed");
-    exit(1);
-  }
+  while (connect(fd, (struct sockaddr *)remote, sizeof(*remote)) < 0) { usleep(10); }
 
   // keep send and recv compatible with the server invocations
   clientfd = fd;
